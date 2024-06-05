@@ -9,8 +9,8 @@
 			GenerateCustomers(factory, count: 2);
 			GenerateCars(factory, count: 3);
 
-            Console.WriteLine("************* BEFORE SaleCar() *************");
-            factory.Info();
+			Console.WriteLine("************* BEFORE SaleCar() *************");
+			factory.Info();
 
 			factory.SaleCar();
 
