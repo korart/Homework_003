@@ -1,59 +1,54 @@
-﻿namespace Homework_003
+﻿using System.Collections;
+
+namespace Homework_003
 {
 	internal class FactoryAF
 	{
-		private Stack<Car> cars = [];
-		public List<Customer> Customers = [];
+		private readonly Stack<Car> Cars = [];
+		public readonly List<Customer> Customers = [];
 
 
 		public void AddCar()
 		{
-			cars.Push(new Car());
+			Cars.Push(new Car());
 		}
 
 		public void SaleCar()
 		{
 			foreach (Customer customer in Customers)
 			{
-				if (cars.Count != 0)
+				if (Cars.Count != 0)
 				{
-					customer.Car = cars.Pop();
+					customer.Car = Cars.Pop();
 				}
 				else
 				{
 					break;
 				}
 			}
-			cars.Clear();
+			Cars.Clear();
 		}
 
 		public void Info()
 		{
-			Console.WriteLine("CARS LIST");
-			Console.WriteLine("_________");
-			if (cars.Count > 0)
+			printList(title: "CARS LIST", Cars.ToList());
+			printList(title: "CUSTOMERS LIST", Customers);
+		}
+
+
+		private void printList<T>(string title, List<T> list)
+		{
+			Console.WriteLine(title.ToUpper());
+			Console.WriteLine("_____________________________________________________________");
+			if (list.Count > 0)
 			{
-				cars.ToList().ForEach(car => Console.WriteLine(car));
+				list.ForEach(x => Console.WriteLine(x));
 			}
 			else
 			{
 				Console.WriteLine("There are no items in the list");
 			}
 			Console.WriteLine();
-
-
-			Console.WriteLine("CUSTOMERS LIST");
-			Console.WriteLine("______________");
-			if (Customers.Count > 0)
-			{
-				Customers.ForEach(customer => Console.WriteLine(customer));
-			}
-			else
-			{
-				Console.WriteLine("There are no items in the list");
-			}
-			Console.WriteLine();
-
 		}
 	}
 }

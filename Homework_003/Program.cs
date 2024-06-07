@@ -18,7 +18,8 @@
 			factory.Info();
 		}
 
-		
+
+		#region Service methods
 		static void GenerateCustomers(FactoryAF factory, int count)
 		{
 			List<string> names = GetNamesList();
@@ -63,5 +64,6 @@
 			}
 			return names;
 		}
+		#endregion
 	}
 }
