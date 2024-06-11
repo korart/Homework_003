@@ -5,10 +5,15 @@
 		private readonly Stack<Car> Cars = [];
 		public List<Customer>? Customers;
 
+		private int carNumber = 0;
+
 
 		public void AddCar()
 		{
-			Cars.Push(new Car());
+			carNumber++;
+			Car car = new();
+			car.Number = carNumber;
+			Cars.Push(car);
 		}
 
 		public void SaleCar()

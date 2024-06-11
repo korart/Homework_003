@@ -2,18 +2,9 @@
 {
 	internal class Car
 	{
-		private static int carCounter;
-
-		private readonly int number;
 		private readonly Engine engine;
 
-		public int Number
-		{
-			get
-			{
-				return number;
-			}
-		}
+		public int Number { get; set; }
 
 		public Engine Engine
 		{
@@ -27,8 +18,6 @@
 		{
 			engine = new();
 			engine.Size = new Random().Next(1, 11);
-			carCounter++;
-			number = carCounter;
 		}
 
 		public override string ToString()
