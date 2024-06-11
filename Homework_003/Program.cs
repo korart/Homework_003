@@ -39,7 +39,7 @@
 
 		static void GenerateCars(FactoryAF factory, int count)
 		{
-			for (int i = 0;i < count; i++)
+			for (int i = 0; i < count; i++)
 			{
 				factory.AddCar();
 			}

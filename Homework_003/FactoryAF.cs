@@ -3,7 +3,7 @@
 	internal class FactoryAF
 	{
 		private readonly Stack<Car> Cars = [];
-		public List<Customer> Customers = [];
+		public List<Customer>? Customers;
 
 
 		public void AddCar()
@@ -13,7 +13,7 @@
 
 		public void SaleCar()
 		{
-			foreach (Customer customer in Customers)
+			foreach (Customer customer in Customers ?? ([]))
 			{
 				if (Cars.Count != 0)
 				{
@@ -30,7 +30,7 @@
 		public void Info()
 		{
 			printList(title: "CARS LIST", Cars.ToList());
-			printList(title: "CUSTOMERS LIST", Customers);
+			printList(title: "CUSTOMERS LIST", Customers ?? ([]));
 		}
 
 

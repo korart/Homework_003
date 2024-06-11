@@ -12,7 +12,7 @@
 			{
 				carData = Car.ToString();
 			}
-			return $"Customer: {FIO, -20} | {carData}";
+			return $"Customer: {FIO,-20} | {carData}";
 		}
 	}
 }

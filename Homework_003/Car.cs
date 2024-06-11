@@ -33,7 +33,7 @@
 
 		public override string ToString()
 		{
-			return $"Car No: {Number, -2}, Engine size: {Engine.Size}";
+			return $"Car No: {Number,-2}, Engine size: {Engine.Size}";
 		}
 	}
 }
