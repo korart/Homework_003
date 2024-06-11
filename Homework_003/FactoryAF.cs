@@ -1,11 +1,9 @@
-﻿using System.Collections;
-
-namespace Homework_003
+﻿namespace Homework_003
 {
 	internal class FactoryAF
 	{
 		private readonly Stack<Car> Cars = [];
-		public readonly List<Customer> Customers = [];
+		public List<Customer> Customers = [];
 
 
 		public void AddCar()

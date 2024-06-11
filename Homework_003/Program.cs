@@ -6,7 +6,9 @@
 		{
 			FactoryAF factory = new();
 
-			GenerateCustomers(factory, count: 2);
+			List<Customer> customers = GenerateCustomers(count: 2);
+			factory.Customers = customers; // Сохраним "слабую связь", чтобы список Заказчиков остался в памяти после удаления factory
+
 			GenerateCars(factory, count: 3);
 
 			Console.WriteLine("************* BEFORE SaleCar() *************");
@@ -20,16 +22,18 @@
 
 
 		#region Service methods
-		static void GenerateCustomers(FactoryAF factory, int count)
+		static List<Customer> GenerateCustomers(int count)
 		{
 			List<string> names = GetNamesList();
+			List<Customer> customers = [];
 
 			for (int i = 0; i < count; i++)
 			{
 				Customer customer = new Customer();
 				customer.FIO = GetRandomName(names);
-				factory.Customers.Add(customer);
+				customers.Add(customer);
 			}
+			return customers;
 		}
 
 
